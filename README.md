@@ -8,8 +8,6 @@ Packet Analyzer is a command-line tool designed to analyze `.pcap` and `.pcapng`
 
 - 🌐 **Protocol Filtering:** Supports HTTP, DNS, ICMP, TCP, and UDP.
 - 🔍 **Keyword Highlighting:** Detects and highlights specified keywords in packet data.
-- 📦 **Loading Bar:** Displays a progress bar during analysis.
-- 🎨 **ASCII Art Header:** Stylish tool name display at startup.
 - 📊 **Packet Summaries:** Provides packet summaries for quick analysis.
 
 ---
@@ -20,5 +18,36 @@ Packet Analyzer is a command-line tool designed to analyze `.pcap` and `.pcapng`
 ```bash
 git clone https://github.com/yourusername/PacketAnalyzer.git
 cd PacketAnalyzer
+```
+
+2. **Install the required packages:**  
+```bash
 pip install -r requirements.txt
+```
+
+## 🛠️ Usage
+Run the tool using the command below:
+```bash
+python analyzer.py <file_path> -p <protocol> -k <keyword1> <keyword2>
+```
+
+Parameters:
+
+- <file_path> : Path to the .pcap or .pcapng file.
+- -p / --protocol : Protocol to filter (http, dns, icmp, tcp, udp).
+- -k / --keywords : Space-separated list of keywords to highlight.
+
+## 📦 Examples
+1. Filter HTTP packets and search for keywords:
+```bash
+python analyzer.py data/sample.pcapng -p http -k admin login
+```
+2. Analyze all packets without filtering and search for keywords:
+```bash
+python analyzer.py data/sample.pcapng -k password session
+```
+3. Only display TCP packets without keyword search:
+```bash
+python analyzer.py data/sample.pcapng -p tcp
+```
 
